@@ -4,23 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/custom_background"
     tools:context=".activities.MainActivity">
 
     <EditText
-        android:id="@+id/sourceEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/searchEditText"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint=" Enter movie title "
+        android:paddingStart="20dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/custom_style"
+        app:layout_constraintEnd_toStartOf="@+id/searchButton"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_style"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        android:text="SEARCH"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="invisible"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sourceEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+
+    <ImageView
+        android:id="@+id/titleHumanImageView"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="@android:dimen/thumbnail_height"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_baseline_accessibility_new_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageTextView" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Greetings in the movie search engine from MikolaDeveloper"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
